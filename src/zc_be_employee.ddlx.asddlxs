@@ -1,0 +1,72 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:
+{
+  typeNamePlural: 'Employees',
+  typeName: 'Employee',
+  title.value: 'EmployeeId',
+  description.value: 'EmployeeId'
+}
+annotate entity ZC_BE_Employee
+  with
+{
+/* Facets */
+  @UI.facet:
+  [
+    { position: 10, type: #FIELDGROUP_REFERENCE, label: 'Employee Details', targetQualifier: 'EmployeeDetails' },
+    { position: 20, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'admindata' }
+  ]
+ 
+  /* Fields */
+  @UI.hidden: true
+  EmployeeUuid;
+  
+  @EndUserText: { label: 'Employee ID', quickInfo: 'ID of Employee'}
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'EmployeeDetails' }]
+  EmployeeId;
+  
+  @EndUserText: { label: 'First Name', quickInfo: 'Givenname'}
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20 }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'EmployeeDetails' }]
+  FirstName;
+  
+  @EndUserText: { label: 'Last Name', quickInfo: 'Surname'}
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30 }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'EmployeeDetails' }]
+  LastName;
+  
+  @EndUserText: { label: 'Begin Date', quickInfo: 'Begin Date'}
+  @UI.selectionField: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails' }]
+  BeginDate;
+  
+  /* Admin Data */
+  @EndUserText: { label: 'Created by', quickInfo: 'Created by'}
+  @UI.selectionField: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50 }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'EmployeeDetails' }]
+  CreatedBy;
+  
+  @EndUserText: { label: 'Created at', quickInfo: 'Created at'}
+  @UI.selectionField: [{ position: 60 }]
+  @UI.lineItem: [{ position: 60 }]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'EmployeeDetails' }]
+  CreatedAt;
+  
+  @EndUserText: { label: 'Last changed by', quickInfo: 'Last changed by'}
+  @UI.selectionField: [{ position: 70 }]
+  @UI.lineItem: [{ position: 70 }]
+  @UI.fieldGroup: [{ position: 70, qualifier: 'EmployeeDetails' }]
+  LastChangedBy;
+  
+  @EndUserText: { label: 'Last changed at', quickInfo: 'Last changed at'}
+  @UI.selectionField: [{ position: 80 }]
+  @UI.lineItem: [{ position: 80 }]
+  @UI.fieldGroup: [{ position: 80, qualifier: 'EmployeeDetails' }]
+  LastChangedAt;
+  
+}
