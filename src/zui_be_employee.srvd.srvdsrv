@@ -1,4 +1,5 @@
 @EndUserText.label: 'service definition for employee'
 define service ZUI_BE_EMPLOYEE {
-  expose ZC_BE_Employee as Employee;
+  expose ZC_BE_Employee    as Employee;
+  expose ZC_BE_ENTITLEMENT as Entitlement;
 }
