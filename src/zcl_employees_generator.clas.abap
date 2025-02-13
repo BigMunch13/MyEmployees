@@ -21,6 +21,10 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     DATA: vrequest  TYPE zbe_v_request,
           vrequests TYPE TABLE OF zbe_v_request.
 
+    DATA Klaus_uuid TYPE sysuuid_x16.
+    DATA Markus_uuid TYPE sysuuid_x16.
+
+
 
     " Delete Employees"
     DELETE FROM zbe_employees.
@@ -34,13 +38,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00001'.
+    employee-employee_number  = '00001'.
     employee-client           = sy-mandt.
-    employee-first_name       = 'Jan'.
+    employee-first_name       = 'Klaus'.
     employee-last_name        = 'Neuser'.
     employee-begin_date       = '20240901'.
     employee-created_by       = 'AppenmaierD'.
     employee-last_changed_by  = 'AppenmaierD'.
+    Klaus_uuid                = employee-employee_number.
     GET TIME STAMP FIELD  employee-created_at.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
@@ -52,13 +57,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00002'.
+    employee-employee_number  = '00002'.
     employee-client           = sy-mandt.
-    employee-first_name       = 'Sebastion'.
+    employee-first_name       = 'Markus'.
     employee-last_name        = 'Müller'.
     employee-begin_date       = '20241001'.
     employee-created_by       = 'AppenmaierD'.
     employee-last_changed_by  = 'AppenmaierD'.
+    Markus_uuid               = employee-employee_number.
     GET TIME STAMP FIELD  employee-created_at.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
@@ -70,7 +76,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00003'.
+    employee-employee_number  = '00003'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Lisel'.
     employee-last_name        = 'Wolf'.
@@ -85,6 +91,15 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
+    vrequest-request_id        = cl_system_uuid=>create_uuid_x16_static( ).
+    vrequest-applicant_id      = employee-employee_uuid.
+    vrequest-approver_id       = Markus_uuid.
+    vrequest-start_date        = '20241220'.
+    vrequest-end_date          = '20241228'.
+    vrequest-vacation_days     = 8.
+    vrequest-applicant_comment = 'Winter Holiday'.
+    vrequest-application_state = 'B'.
+    APPEND vrequest TO vrequests.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
@@ -103,9 +118,18 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
+    vrequest-request_id        = cl_system_uuid=>create_uuid_x16_static( ).
+    vrequest-applicant_id      = employee-employee_uuid.
+    vrequest-approver_id       = Markus_uuid.
+    vrequest-start_date        = '20250810'.
+    vrequest-end_date          = '20250813'.
+    vrequest-vacation_days     = 3.
+    vrequest-applicant_comment = 'Marriage of my Brother'.
+    vrequest-application_state = 'B'.
+    APPEND vrequest TO vrequests.
 
-  " Create employees"
-  employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
+    " Create employees"
+    employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
     employee-employee_number      = '00005'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Anna'.
@@ -391,6 +415,16 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 1.
     APPEND entitlement TO entitlements.
+    vrequest-request_id        = cl_system_uuid=>create_uuid_x16_static( ).
+    vrequest-applicant_id      = employee-employee_uuid.
+    vrequest-approver_id       = Markus_uuid.
+    vrequest-start_date        = '20250715'.
+    vrequest-end_date          = '20250730'.
+    vrequest-vacation_days     = 15.
+    vrequest-applicant_comment = 'Summer Holiday'.
+    vrequest-application_state = 'B'.
+    APPEND vrequest TO vrequests.
+
 
     "Insert Employees"
     INSERT zbe_employees FROM TABLE @employees.
