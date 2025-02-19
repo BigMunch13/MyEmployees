@@ -7,7 +7,7 @@ define root view entity ZR_BE_EMPLOYEE
 {
       @Semantics.uuid: true
   key employee_uuid   as EmployeeUuid,
-      employee_number as EmployeeNumber,
+      employee_id     as EmployeeId,
       first_name      as FirstName,
       last_name       as LastName,
       @Semantics.dateTime: true

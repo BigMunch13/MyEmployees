@@ -38,45 +38,45 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number  = '00001'.
+    employee-employee_id  = '00001'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Klaus'.
     employee-last_name        = 'Neuser'.
     employee-begin_date       = '20240901'.
     employee-created_by       = 'AppenmaierD'.
     employee-last_changed_by  = 'AppenmaierD'.
-    Klaus_uuid                = employee-employee_number.
+    Klaus_uuid                = employee-employee_id.
     GET TIME STAMP FIELD  employee-created_at.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number  = '00002'.
+    employee-employee_id  = '00002'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Markus'.
     employee-last_name        = 'Müller'.
     employee-begin_date       = '20241001'.
     employee-created_by       = 'AppenmaierD'.
     employee-last_changed_by  = 'AppenmaierD'.
-    Markus_uuid               = employee-employee_number.
+    Markus_uuid               = employee-employee_id.
     GET TIME STAMP FIELD  employee-created_at.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number  = '00003'.
+    employee-employee_id  = '00003'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Lisel'.
     employee-last_name        = 'Wolf'.
@@ -87,7 +87,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
@@ -103,7 +103,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00004'.
+    employee-employee_id      = '00004'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Bartholomeus'.
     employee-last_name        = 'Huber'.
@@ -114,7 +114,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
@@ -130,7 +130,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00005'.
+    employee-employee_id      = '00005'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Anna'.
     employee-last_name        = 'Schneider'.
@@ -141,14 +141,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00006'.
+    employee-employee_id      = '00006'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Felix'.
     employee-last_name        = 'Weber'.
@@ -159,14 +159,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00007'.
+    employee-employee_id      = '00007'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Maya'.
     employee-last_name        = 'Fischer'.
@@ -177,14 +177,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00008'.
+    employee-employee_id      = '00008'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Lucas'.
     employee-last_name        = 'Koch'.
@@ -195,14 +195,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00009'.
+    employee-employee_id      = '00009'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Sophie'.
     employee-last_name        = 'Maier'.
@@ -213,14 +213,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00010'.
+    employee-employee_id      = '00010'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Jonas'.
     employee-last_name        = 'Wagner'.
@@ -231,14 +231,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00011'.
+    employee-employee_id      = '00011'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Emma'.
     employee-last_name        = 'Schmidt'.
@@ -249,14 +249,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00012'.
+    employee-employee_id      = '00012'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Leon'.
     employee-last_name        = 'Klein'.
@@ -267,14 +267,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00013'.
+    employee-employee_id      = '00013'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Isabella'.
     employee-last_name        = 'Lang'.
@@ -285,14 +285,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00014'.
+    employee-employee_id      = '00014'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Nico'.
     employee-last_name        = 'Richter'.
@@ -303,14 +303,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00015'.
+    employee-employee_id      = '00015'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Lina'.
     employee-last_name        = 'Bauer'.
@@ -321,14 +321,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 30.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00016'.
+    employee-employee_id      = '00016'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Kilian'.
     employee-last_name        = 'Krüger'.
@@ -339,14 +339,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 15.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00017'.
+    employee-employee_id      = '00017'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Nina'.
     employee-last_name        = 'Zimmermann'.
@@ -357,14 +357,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 15.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00018'.
+    employee-employee_id      = '00018'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Tom'.
     employee-last_name        = 'Hoffmann'.
@@ -375,14 +375,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 15.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00019'.
+    employee-employee_id      = '00019'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Amelie'.
     employee-last_name        = 'Neumann'.
@@ -393,14 +393,14 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 15.
     APPEND entitlement TO entitlements.
 
     " Create employees"
     employee-employee_uuid    = cl_system_uuid=>create_uuid_x16_static( ).
-    employee-employee_number      = '00020'.
+    employee-employee_id      = '00020'.
     employee-client           = sy-mandt.
     employee-first_name       = 'Maximilian'.
     employee-last_name        = 'Krause'.
@@ -411,7 +411,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     GET TIME STAMP FIELD  employee-last_changed_at.
     APPEND employee TO employees.
     entitlement-entitlement_id   = cl_system_uuid=>create_uuid_x16_static( ).
-    entitlement-employee_uuid    = employee-employee_number.
+    entitlement-employee_uuid    = employee-employee_id.
     entitlement-entitlement_year = 2025.
     entitlement-vacation_days    = 1.
     APPEND entitlement TO entitlements.

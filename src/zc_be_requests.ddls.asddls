@@ -1,5 +1,6 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection view for leave requests'
+@Metadata.allowExtensions: true
 define view entity ZC_BE_REQUESTS as projection on ZR_BE_REQUESTS
 {
   /* Fields */

@@ -21,7 +21,7 @@ define view ZR_BE_REQUESTS as select from zbe_v_request
       vacation_days             as VacationDays,
       applicant_comment         as ApplicationComment,
       application_state         as State,
-
+      
       /* Admin Data */
       @Semantics.user.createdBy: true
       created_by                as CreatedBy,

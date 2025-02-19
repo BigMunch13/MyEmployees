@@ -7,7 +7,7 @@ define root view entity ZC_BE_Employee
   as projection on ZR_BE_EMPLOYEE
 {
   key EmployeeUuid,
-      EmployeeNumber,
+      EmployeeId,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
       FirstName,
@@ -20,9 +20,9 @@ define root view entity ZC_BE_Employee
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt,
+      LastChangedAt
       
       /* Association */
-      _VacationEntitlement : redirected to composition child ZC_BE_ENTITLEMENT
+//      _VacationEntitlement : redirected to composition child ZC_BE_ENTITLEMENT
       
 }

@@ -2,5 +2,5 @@
 define service ZUI_BE_EMPLOYEE {
   expose ZC_BE_Employee    as Employee;
   expose ZC_BE_ENTITLEMENT as Entitlement;
-  expose ZC_BE_REQUESTS    as Requests;
+  expose ZC_BE_REQUESTS    as LeaveRequests;
 }

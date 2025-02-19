@@ -1,5 +1,6 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Projection view for entitlement'
+@Metadata.allowExtensions: true
 define view entity ZC_BE_ENTITLEMENT
   as projection on ZR_BE_ENTITLEMENT
 {
