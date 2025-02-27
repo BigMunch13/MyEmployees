@@ -48,32 +48,22 @@ annotate entity ZC_BE_REQUESTS
   @UI.hidden: true
   State;
 
-//  @EndUserText: { label: 'State', quickInfo: 'State of Leave Request' }
-//  @UI.selectionField: [{ position: 20 }]
-//  @UI.lineItem: [{ position: 30, criticality: 'StateCriticality', criticalityRepresentation: #WITH_ICON }]
-//  @UI.dataPoint: { description: 'State of Leave Request', title: 'State', targetValueElement: 'StateDescription', criticality: 'StateCriticality' }
-//  @UI.fieldGroup: [{ position: 30, qualifier: 'details' }]
-//  StateDescription;
+  @EndUserText: { label: 'State', quickInfo: 'State of Leave Request' }
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 30, criticality: 'StateCriticality', criticalityRepresentation: #WITH_ICON }]
+  @UI.dataPoint: { description: 'State of Leave Request', title: 'State', targetValueElement: 'StateDescription', criticality: 'StateCriticality' }
+  @UI.fieldGroup: [{ position: 30, qualifier: 'details' }]
+  StateDescription;
 
   @UI.lineItem: [{ position: 40 }]
   @UI.fieldGroup: [{ position: 40, qualifier: 'details' }]
   ApplicationComment;
 
-//  @EndUserText: { label: 'Approver', quickInfo: 'Full Name of Approver' }
-//  @UI.lineItem: [{ hidden: true }]
-//  @UI.dataPoint: { description: 'Full Name of Approver', title: 'Approver', targetValueElement: 'ApproverFullName' }
-//  ApproverFullName;
+  @UI.hidden: true
+  StartDateCriticality;
 
-//  @EndUserText: { label: 'Applicant', quickInfo: 'Full Name of Applicant' }
-//  @UI.lineItem: [{ hidden: true }]
-//  @UI.dataPoint: { description: 'Full Name of Applicant', title: 'Applicant', targetValueElement: 'ApplicantFullName' }
-//  ApplicantFullName;
-
-//  @UI.hidden: true
-//  StartDateCriticality;
-//
-//  @UI.hidden: true
-//  StateCriticality;
+  @UI.hidden: true
+  StateCriticality;
 
   /* Admin Data */
   @UI.fieldGroup: [{ position: 10, qualifier: 'admindata' }]

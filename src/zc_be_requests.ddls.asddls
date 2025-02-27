@@ -6,7 +6,6 @@ define view entity ZC_BE_REQUESTS as projection on ZR_BE_REQUESTS
   /* Fields */
   key RequestId,
   ApplicantId,
-//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CEO_EmployeeUuidVH', element: 'EmployeeId' }}]
   ApproverId,
   StartDate,
   EndDate,
@@ -15,12 +14,10 @@ define view entity ZC_BE_REQUESTS as projection on ZR_BE_REQUESTS
   @Search.fuzzinessThreshold: 0.7
   ApplicationComment,
   State,
-//  ApplicantFullName,
-//  ApproverFullName,
-//  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CEO_StateVH', element: 'StateDescription' }}]
-//  StateDescription,
-//  StartDateCriticality,
-//  StateCriticality,
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_BE_StateValueHelp', element: 'StateDescription' }}]
+  StateDescription,
+  StartDateCriticality,
+  StateCriticality,
   
   /* Admin Data */
   CreatedBy,

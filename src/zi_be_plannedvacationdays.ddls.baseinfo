@@ -3,13 +3,10 @@
 {
 "FROM":
 [
-"ZI_BE_STATEVALUEHELP",
 "ZBE_V_REQUEST"
 ],
 "ASSOCIATED":
-[
-"ZR_BE_EMPLOYEE"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":

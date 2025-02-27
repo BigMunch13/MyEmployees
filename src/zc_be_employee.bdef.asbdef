@@ -1,0 +1,28 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_BE_Employee
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Refresh;
+
+  use association _VacationEntitlement;
+  use association _LeaveRequests { create; }
+}
+
+define behavior for ZC_BE_Entitlement
+{
+  use association _Employee;
+}
+
+define behavior for ZC_BE_Requests
+{
+  use update;
+  use delete;
+
+  use association _Applicant;
+  use association _Approver;
+}

@@ -13,7 +13,14 @@ annotate entity ZC_BE_Employee
   @UI.facet:
   [
     { position: 10, type: #FIELDGROUP_REFERENCE, label: 'Employee Details', targetQualifier: 'EmployeeDetails' },
-    { position: 20, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'admindata' }
+    { position: 20, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'admindata' },
+    { position: 30, type: #LINEITEM_REFERENCE,  targetElement: '_LeaveRequests', label: 'Leave Requests' },
+    { position: 40, type: #FIELDGROUP_REFERENCE, label: 'Administrative Data', targetQualifier: 'admindata' }
+    
+  ]
+  
+  @UI.identification: [
+    { position: 10, type: #FOR_ACTION, dataAction: 'Refresh', label: 'Refresh' }
   ]
  
   /* Fields */
@@ -44,27 +51,45 @@ annotate entity ZC_BE_Employee
   @UI.fieldGroup: [{ position: 40, qualifier: 'EmployeeDetails' }]
   BeginDate;
   
+  @EndUserText: { label: 'Available Vacation Days', quickInfo: 'Availavle Vacation Days'}
+  @UI.lineItem: [{ position: 50, criticality: 'AvailableVDaysCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.dataPoint: { description: 'Available Vacation Days', title: 'Available Vacation Days', targetValueElement: 'AvailableVacationDays', criticality: 'AvailableVDaysCriticality' }
+  AvailableVacationDays;
+  @EndUserText: { label: 'Consumed Vacation Days', quickInfo: 'Consumed Vacation Days'}
+  @UI.lineItem: [{ position: 60, criticality: 'ConsumedVDaysCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.dataPoint: { description: 'Consumed Vacation Days', title: 'Consumed Vacation Days', targetValueElement: 'ConsumedVacationDays', criticality: 'ConsumedVDaysCriticality'}
+  ConsumedVacationDays;
+  @EndUserText: { label: 'Planned Vacation Days', quickInfo: 'Planned Vacation Days'}
+  @UI.lineItem: [{ position: 70, criticality: 'PlannedVDaysCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.dataPoint: { description: 'Available Vacation Days', title: 'Planned Vacation Days', targetValueElement: 'PlannedVacationDays', criticality: 'PlannedVDaysCriticality'}
+  PlannedVacationDays;
+
+  @UI.hidden: true
+  AvailableVDaysCriticality;
+
+  @UI.hidden: true
+  ConsumedVDaysCriticality;
+
+  @UI.hidden: true
+  PlannedVDaysCriticality;
+  
   /* Admin Data */
   @EndUserText: { label: 'Created by', quickInfo: 'Created by'}
-//  @UI.selectionField: [{ position: 50 }]
   @UI.lineItem: [{ position: 50 }]
   @UI.fieldGroup: [{ position: 50, qualifier: 'EmployeeDetails' }]
   CreatedBy;
   
   @EndUserText: { label: 'Created at', quickInfo: 'Created at'}
-//  @UI.selectionField: [{ position: 60 }]
   @UI.lineItem: [{ position: 60 }]
   @UI.fieldGroup: [{ position: 60, qualifier: 'EmployeeDetails' }]
   CreatedAt;
   
   @EndUserText: { label: 'Last changed by', quickInfo: 'Last changed by'}
-//  @UI.selectionField: [{ position: 70 }]
   @UI.lineItem: [{ position: 70 }]
   @UI.fieldGroup: [{ position: 70, qualifier: 'EmployeeDetails' }]
   LastChangedBy;
   
   @EndUserText: { label: 'Last changed at', quickInfo: 'Last changed at'}
-//  @UI.selectionField: [{ position: 80 }]
   @UI.lineItem: [{ position: 80 }]
   @UI.fieldGroup: [{ position: 80, qualifier: 'EmployeeDetails' }]
   LastChangedAt;

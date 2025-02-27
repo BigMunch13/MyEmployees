@@ -98,7 +98,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     vrequest-end_date          = '20241228'.
     vrequest-vacation_days     = 8.
     vrequest-applicant_comment = 'Winter Holiday'.
-    vrequest-application_state = 'B'.
+    vrequest-application_state = 'R'.
     APPEND vrequest TO vrequests.
 
     " Create employees"
@@ -125,7 +125,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     vrequest-end_date          = '20250813'.
     vrequest-vacation_days     = 3.
     vrequest-applicant_comment = 'Marriage of my Brother'.
-    vrequest-application_state = 'B'.
+    vrequest-application_state = 'R'.
     APPEND vrequest TO vrequests.
 
     " Create employees"
@@ -422,7 +422,7 @@ CLASS zcl_employees_generator IMPLEMENTATION.
     vrequest-end_date          = '20250730'.
     vrequest-vacation_days     = 15.
     vrequest-applicant_comment = 'Summer Holiday'.
-    vrequest-application_state = 'B'.
+    vrequest-application_state = 'R'.
     APPEND vrequest TO vrequests.
 
 

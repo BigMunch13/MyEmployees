@@ -1,0 +1,128 @@
+managed implementation in class zbp_be_employee unique;
+strict ( 2 );
+
+/* Root Entitiy Employee */
+define behavior for ZR_BE_Employee alias Employee
+persistent table ZBE_EMPLOYEES
+//draft table zceo_employee_d
+lock master
+//total etag LastChangedAt
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  association _VacationEntitlement { create; }
+  association _LeaveRequests { create; }
+
+  /* Aktions */
+  action Refresh result [1] $self;
+
+  /* Determinations */
+  determination DetermineEmployeeNumber on modify { field BeginDate; }
+
+  /* Fields */
+  field ( readonly, numbering : managed ) EmployeeUUID;
+  field ( readonly ) EmployeeId;
+  field ( mandatory : create ) LastName, FirstName, BeginDate;
+  field ( readonly : update ) BeginDate;
+    // Admin Data
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  mapping for zbe_employees corresponding
+    {
+      EmployeeUUID   = employee_uuid;
+      EmployeeId     = employee_id;
+      FirstName      = first_name;
+      LastName       = last_name;
+      BeginDate      = begin_date;
+      CreatedBy      = created_by;
+      CreatedAt      = created_at;
+      LastChangedBy  = last_changed_by;
+      LastChangedAt  = last_changed_at;
+    }
+}
+
+define behavior for ZR_BE_ENTITLEMENT alias LeaveEntitlement
+persistent table ZBE_V_ENTITLEMEN
+//draft table zceo_entitleme_d
+lock dependent by _Employee
+authorization dependent by _Employee
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  association _Employee;
+
+  /* Fields */
+  field ( readonly, numbering : managed ) EntitlementId;
+  field ( readonly ) EmployeeUuid;
+  field ( readonly : update ) EntitlementYear;
+    // Admin Data
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  mapping for zbe_v_entitlemen corresponding
+    {
+      EntitlementId   = entitlement_id;
+      EmployeeUuid    = employee_uuid;
+      EntitlementYear = entitlement_year;
+      VacationDays    = vacation_days;
+      CreatedBy       = created_by;
+      CreatedAt       = created_at;
+      LastChangedBy   = last_changed_by;
+      LastChangedAt   = last_changed_at;
+    }
+}
+
+define behavior for ZR_BE_REQUESTS alias LeaveRequest
+persistent table ZBE_V_REQUEST
+//draft table zceo_lrequest_d
+lock dependent by _Applicant
+authorization dependent by _Applicant
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  association _Applicant;
+  association _Approver;
+
+  /* Aktions */
+  action DeclineLeaveRequest result [1] $self;
+  action ApproveLeaveRequest result [1] $self;
+
+  /* Validations */
+  validation ValidateSufficientVacationDays on save { create; }
+  validation ValidateDates on save { create; }
+
+  /* Determinations */
+  determination DetermineVacationDays on modify { create; }
+  determination DetermineState on modify { field ApplicantId, StartDate, EndDate, ApplicationComment; }
+
+  /* Fields */
+  field ( readonly, numbering : managed ) RequestId;
+  field ( readonly ) ApplicantId, State, VacationDays;
+  field ( mandatory : create ) ApproverId, StartDate, EndDate;
+  field ( readonly : update ) ApproverId, StartDate, EndDate;
+    // Admin Data
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  mapping for zbe_v_request corresponding
+    {
+      RequestId          = request_id;
+      ApplicantId        = applicant_id;
+      ApproverId         = approver_id;
+      StartDate          = start_date;
+      EndDate            = end_date;
+      VacationDays       = vacation_days;
+      ApplicationComment = applicant_comment;
+      state              = application_state;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+    }
+}

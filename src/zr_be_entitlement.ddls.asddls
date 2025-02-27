@@ -1,7 +1,6 @@
-@AbapCatalog.sqlViewName: 'ZBE_ENTITLEMENT'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Root view for entitlement'
-define view ZR_BE_ENTITLEMENT as select from zbe_v_entitlemen
+define view entity ZR_BE_ENTITLEMENT as select from zbe_v_entitlemen
   association to parent ZR_BE_EMPLOYEE as _Employee on $projection.EmployeeUuid = _Employee.EmployeeUuid
 
 {

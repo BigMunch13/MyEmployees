@@ -7,6 +7,7 @@ define root view entity ZC_BE_Employee
   as projection on ZR_BE_EMPLOYEE
 {
   key EmployeeUuid,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_BE_EmployeeNumVH', element: 'EmployeeNumber' } }]
       EmployeeId,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
@@ -15,14 +16,23 @@ define root view entity ZC_BE_Employee
       @Search.fuzzinessThreshold: 0.7
       LastName,
       BeginDate,
+      AvailableVacationDays,
+      PlannedVacationDays,
+      ConsumedVacationDays,
+      AvailableVDaysCriticality,
+      PlannedVDaysCriticality,
+      ConsumedVDaysCriticality,
+      
+      
       
       /* Administrative Data */
       CreatedBy,
       CreatedAt,
       LastChangedBy,
-      LastChangedAt
+      LastChangedAt,
       
-      /* Association */
-//      _VacationEntitlement : redirected to composition child ZC_BE_ENTITLEMENT
-      
+      /* Associations */
+      _VacationEntitlement : redirected to composition child ZC_BE_ENTITLEMENT,
+      _LeaveRequests       : redirected to composition child ZC_BE_REQUESTS
+            
 }
